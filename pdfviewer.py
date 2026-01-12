@@ -21,6 +21,15 @@ class pdfviewer:
         self.current_page = 0
         self.numPages = None
 
+        self.menu = Menu(self.master)
+        self.master.config(menu = self.menu)
+        self.filemenu = Menu(self.menu)
+        self.menu.add_cascade(label="File", menu=self.filemenu)
+
+        self.filemenu.add_command(label="Open FIle")
+        self.filemenu.add_command(label="Exit")
+        
+
 root = Tk()
 app = pdfviewer(root)
 root.mainloop()
