@@ -8,9 +8,17 @@ import os
 
 class pdfviewer:
     def __init__(self, master):
-        pass
+        self.master = master
+        self.master.title = ('PDF Viewer')
+        self.master.geometry('580x520+440+180')
+        self.master.resizable(Width = 0, height = 0)
+        self.path = None
+        self.fileisopen = None
+        self.author = None
+        self.name = None
+        self.current_page = 0
+        self.numPages = None
 
 root = Tk()
 app = pdfviewer(root)
 root.mainloop()
-
