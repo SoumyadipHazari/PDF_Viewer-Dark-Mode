@@ -12,6 +12,8 @@ class pdfviewer:
         self.master.title = ('PDF Viewer')
         self.master.geometry('580x520+440+180')
         self.master.resizable(width = 0, height = 0)
+        self.master.iconbitmap(self.master, 'assets/pdf.ico')
+
         self.path = None
         self.fileisopen = None
         self.author = None
