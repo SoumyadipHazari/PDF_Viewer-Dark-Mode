@@ -11,7 +11,7 @@ class pdfviewer:
         self.master = master
         self.master.title = ('PDF Viewer')
         self.master.geometry('580x520+440+180')
-        self.master.iconbitmap(self.master, 'assets/pdf.ico')
+        self.master.iconbitmap(self.master, 'assets/pdf.ico') #<a href="https://www.flaticon.com/free-icons/pdf" title="pdf icons">Pdf icons created by rizal2109 - Flaticon</a>
 
         self.path = None
         self.fileisopen = None
@@ -52,6 +52,32 @@ class pdfviewer:
         self.output.grid(row=0, column=0)
         self.scroll.configure(command=self.output.yview)
         self.scrollx.configure(command=self.output.xview)
+#adding button png
+
+        self.uparrow_icon = PhotoImage(file="assets/arrow.png")#<a href="https://www.flaticon.com/free-icons/uparrow" title="uparrow icons">Uparrow icons created by kowshal-kumar - Flaticon</a>
+        self.downarrow_icon = PhotoImage(file= 'assets/arrows.png')#<a href="https://www.flaticon.com/free-icons/downarrow" title="downarrow icons">Downarrow icons created by kowshal-kumar - Flaticon</a>
+#resizing png
+
+        self.uparrow = self.uparrow_icon.subsample(3,3)
+        self.downarrow = self.downarrow_icon.subsample(3,3)
+#creating upper button
+
+
+        self.upb = ttk.Button(self.bottom_frame, image=self.uparrow)
+        self.upb.grid(row=0, column=1, padx=(270, 5), pady=8)
+
+#creating down button
+
+        self.downb = ttk.Button(self.bottom_frame, image=self.downarrow)
+        self.downb.grid(row=0, column=3, pady=8)
+
+#label for displaying page no.
+
+        self.page_label= ttk.Label(self.bottom_frame, text='page')
+        self.page_label.grid(row=0, column=4, padx=5)
+
+
+
 
 
 
