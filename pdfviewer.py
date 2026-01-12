@@ -11,7 +11,6 @@ class pdfviewer:
         self.master = master
         self.master.title = ('PDF Viewer')
         self.master.geometry('580x520+440+180')
-        self.master.resizable(width = 0, height = 0)
         self.master.iconbitmap(self.master, 'assets/pdf.ico')
 
         self.path = None
@@ -28,7 +27,16 @@ class pdfviewer:
 
         self.filemenu.add_command(label="Open FIle")
         self.filemenu.add_command(label="Exit")
+
+        self.top_frame = ttk.Frame(self.master, width=580, height=460)
+        self.top_frame.grid(row=0, column = 0)
+        self.top_frame.grid_propagate(False)
         
+        self.bottom_frame = ttk.Frame(self.master, width=580, height=50)
+        self.bottom_frame.grid(row=1, column=0)
+        self.bottom_frame.grid_propagate(False)
+
+
 
 root = Tk()
 app = pdfviewer(root)
